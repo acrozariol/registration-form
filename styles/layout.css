@@ -1,0 +1,50 @@
+#app {
+  display: grid;
+  grid-template-columns: 51.25% 48.75%; /* pegar a width de cada lado da página, somar tudo. (656 x 100) dividido 1280 (1290 é a soma da weight dos dois lados). */
+  height: 100vh; /*ocupa o espaco todo da página */
+  overflow: hidden; /*nunca vai ter rolagem na pagina */
+}
+
+main {
+  overflow: auto;
+  padding: 4rem; /* 64px dividido por 16 = 4 */
+}
+
+main .main-container {
+  max-width: 33rem;
+  margin-left: auto; /* preenche as laterais igualmente */
+}
+
+main .back {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+main h1 {
+  font: 600 1.5rem/1.25 var(--font-family);
+  margin-bottom: 0.5rem;
+}
+
+aside {
+  padding: 4rem; /* 64px dividido por 16 = 4 */
+  background-color: var(--surface-secondary);
+}
+
+aside .aside-container {
+  max-width: 31rem;
+  & > img {
+    /* & se refere ao .aside-container e o > se refere a imagem dele */
+    margin-top: 2rem;
+  }
+}
+
+aside h2 {
+  font: 600 2.5rem/1.25 var(--font-family);
+  margin-bottom: 0.5rem;
+}
+
+aside span {
+  color: var(--text-highlight);
+}
