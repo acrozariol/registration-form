@@ -34,4 +34,22 @@ label + .radio-wrapper {
     top: 0.5rem;
     left: 0.5rem;
   }
+
+  &:hover,
+  &:focus-within {
+    border: 1px solid var(--stroke-highlight);
+
+    & .radio-image {
+      background-image: url(../../assets/icons/radio-hover.svg);
+    }
+  }
+
+  &:has(:checked) {
+    border: 2px solid var(--stroke-highlight);
+
+    & .radio-image {
+      background-image: url(../../assets/icons/radio-checked.svg);
+      background-repeat: no-repeat;
+    }
+  }
 }
