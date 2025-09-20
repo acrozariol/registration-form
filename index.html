@@ -18,41 +18,40 @@
     <main>
       <div class="main-container">
         <div class="back">
-          <img src="assets/icons/arrow-left-02.svg" alt="ícone de voltar">
-          <span>Voltar</span>
+          <img src="assets/icons/arrow-left-02.svg" alt="back icon">
+          <span>Back</span>
         </div>
-        <h1>Formulário de matrícula</h1>
-        <p>Preencha os dados abaixo para matricular seu filho na escola de educação infantil Estrelas do Amanhã.
+        <h1>Enrollment Form</h1>
+        <p>Fill in the details below to enroll your child in the Estrelas do Amanhã early childhood education school.
         </p>
         <form method="post" enctype="multipart/form-data">
           <fieldset class="child-info">
             <legend>
-              Informações da criança
+              Child's Information
             </legend>
             <div class="input-wrapper">
-              <label for="fullname">Nome completo</label>
-              <input id="fullname" name="fullname" type="text" placeholder="Qual é o nome da criança">
-
+              <label for="fullname">Full Name</label>
+              <input id="fullname" name="fullname" type="text" placeholder="What is the child's name?">
             </div>
             <div class="input-wrapper">
-              <label for="birth">Data de nascimento</label>
+              <label for="birth">Date of Birth</label>
               <input id="birth" name="birth" type="date">
             </div>
             <div class="select-wrapper">
-              <label for="gender">Sexo</label>
+              <label for="gender">Gender</label>
               <select name="gender" id="gender">
                 <option value="female">Female</option>
                 <option value="male">Male</option>
-                <option value="na">Prefiro não responder</option>
+                <option value="na">Prefer not to answer</option>
               </select>
             </div>
             <div class="textarea-wrapper">
-              <label for="medical-info">Informações médicas</label>
+              <label for="medical-info">Medical Information</label>
               <textarea name="medical-info" id="medical-info" cols="30" rows="5"
-                placeholder="A criança possui alguma condição médica que a escola deveria saber? (Se sim, especifique aqui)"></textarea>
+                placeholder="Does the child have any medical condition the school should know about? (If yes, specify here)"></textarea>
             </div>
             <div class="droparea-wrapper">
-              <label for="birth-file">Certidão de Nascimento</label>
+              <label for="birth-file">Birth Certificate</label>
               <div class="dropzone">
                 <input type="file" id="birth-file" name="birth-file">
                 <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -63,128 +62,127 @@
                     stroke="#D6D3D1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
 
-                <p>Clique aqui para <br> selecionar os arquivos</p>
+                <p>Click here to <br> select files</p>
               </div>
             </div>
           </fieldset>
           <fieldset class="address">
-            <legend>Endereço residencial</legend>
+            <legend>Residential Address</legend>
             <div class="input-wrapper">
-              <label for="cep">CEP</label>
+              <label for="cep">ZIP Code</label>
               <input type="text" id="cep" name="cep">
             </div>
 
             <div class="flex">
               <div class="input-wrapper flex-2">
-                <label for="street">Rua</label>
+                <label for="street">Street</label>
                 <input type="text" id="street" name="street" value="Rua das flores" disabled>
               </div>
               <div class="input-wrapper flex-1">
-                <label for="number">Número</label>
+                <label for="number">Number</label>
                 <input type="number" id="number" name="number">
               </div>
             </div>
 
             <div class="flex">
               <div class="input-wrapper flex-2">
-                <label for="city">Cidade</label>
+                <label for="city">City</label>
                 <input type="text" id="city" name="city" value="São Paulo" disabled>
               </div>
               <div class="input-wrapper flex-1">
-                <label for="state">Estado</label>
+                <label for="state">State</label>
                 <input type="text" id="state" name="state" value="SP" disabled>
               </div>
             </div>
           </fieldset>
           <fieldset class="gardian">
-            <legend>Informações do responsável</legend>
+            <legend>Guardian's Information</legend>
             <div class="input-wrapper">
-              <label for="gardian">Nome do responsável</label>
+              <label for="gardian">Guardian's Name</label>
               <input type="text" id="gardian" name="gardian">
-              <small>Principal responsável legal e contato de emergência</small>
+              <small>Main legal guardian and emergency contact</small>
             </div>
 
             <div class="input-wrapper">
-              <label for="phone">Telefone</label>
+              <label for="phone">Phone</label>
               <input type="text" id="phone" name="phone" placeholder="(xx) x xxxx-xxxx">
             </div>
 
             <div class="input-wrapper">
-              <label for="mail">Email</label>
-              <input type="email" name="mail" id="mail" required>
-
-              <div class="error">
-                <img src="assets/icons/alert-circle.svg" alt="ícone de alerta">
-                <span>Insira um e-mail válido</span>
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="Enter your email">
+              <div class="error-message">
+                <img src="assets/icons/alert-circle.svg" alt="alert icon">
+                <span>Enter a valid email</span>
               </div>
             </div>
           </fieldset>
 
           <fieldset class="enroll-options">
-            <legend>Opções de matrícula</legend>
+            <legend>Enrollment Options</legend>
             <div class="input-wrapper">
-              <label>Selecione o turno de estudo</label>
+              <label>Select the study shift</label>
 
               <div class="radio-wrapper">
                 <div class="radio-inner">
                   <div class="radio-image"></div>
                   <input type="radio" name="study-shift" id="morning" value="morning">
-                  <img src="assets/icons/sun-cloud-02.svg" alt="ícone de sol com nuvem">
-                  <label for="morning">Manhã</label>
+                  <img src="assets/icons/sun-cloud-02.svg" alt="icon of sun with cloud">
+                  <label for="morning">Morning</label>
                 </div>
 
                 <div class="radio-inner">
                   <div class="radio-image"></div>
                   <input type="radio" name="study-shift" id="evening" value="evening">
-                  <img src="assets/icons/sun-02.svg" alt="ícone de sol">
-                  <label for="evening">Tarde</label>
+                  <img src="assets/icons/sun-02.svg" alt="sun icon">
+                  <label for="evening">Evening</label>
                 </div>
               </div>
             </div>
             <div class="input-wrapper">
-              <label>Em qual esporte você gostaria de inscrever seu filho?</label>
+              <label>What sport would you like to enroll your child in?</label>
 
               <div class="radio-wrapper">
                 <div class="radio-inner">
                   <div class="radio-image"></div>
                   <input type="radio" name="sport" id="football">
-                  <img src="assets/icons/football.svg" alt="ícone de futebol">
-                  <label for="football">Futebol</label>
+                  <img src="assets/icons/football.svg" alt="Football icon">
+                  <label for="football">Football</label>
                 </div>
 
                 <div class="radio-inner">
                   <div class="radio-image"></div>
                   <input type="radio" name="sport" id="basketball">
-                  <img src="assets/icons/basketball-02.svg" alt="ícone de basquete">
-                  <label for="basketball">Basquete</label>
+                  <img src="assets/icons/basketball-02.svg" alt="Basketball icon">
+                  <label for="basketball">Basketball</label>
                 </div>
 
                 <div class="radio-inner">
                   <div class="radio-image"></div>
                   <input type="radio" name="sport" id="swimming">
-                  <img src="assets/icons/swimming.svg" alt="ícone de natação">
-                  <label for="swimming">Natação</label>
+                  <img src="assets/icons/swimming.svg" alt="Swimming icon">
+                  <label for="swimming">Swimming</label>
                 </div>
 
                 <div class="radio-inner">
                   <div class="radio-image"></div>
                   <input type="radio" name="sport" id="yoga">
-                  <img src="assets/icons/yoga-02.svg" alt="ícone de yoga">
+                  <img src="assets/icons/yoga-02.svg" alt="Yoga icon">
                   <label for="yoga">Yoga</label>
                 </div>
 
                 <div class="radio-inner">
                   <div class="radio-image"></div>
                   <input type="radio" name="sport" id="volleyball">
-                  <img src="assets/icons/volleyball.svg" alt="ícone de volleyball">
-                  <label for="volleyball">Vôlei</label>
+                  <img src="assets/icons/volleyball.svg" alt="Volleyball icon">
+                  <label for="volleyball">Volleyball</label>
                 </div>
 
                 <div class="radio-inner">
                   <div class="radio-image"></div>
                   <input type="radio" name="sport" id="boxing">
-                  <img src="assets/icons/boxing-glove-01.svg" alt="ícone de boxing">
-                  <label for="boxing">Boxe</label>
+                  <img src="assets/icons/boxing-glove-01.svg" alt="Boxing icon">
+                  <label for="boxing">Boxing</label>
                 </div>
               </div>
             </div>
@@ -195,15 +193,13 @@
           <div class="terms-wrapper input-wrapper checkbox-wrapper">
             <div class="checkbox-image"></div>
             <input type="checkbox" name="terms" id="terms">
-            <label for="terms">Declaro que li e concordo com os <strong>Termos e Condições</strong> e com a
-              <strong>Política
-                de Privacidade</strong> da
-              escola Estrela do Amanhã. </label>
+            <label for="terms">I declare that I have read and agree to the <strong>Terms and Conditions</strong> and the
+              <strong>Privacy Policy</strong> of the Estrela do Amanhã school. </label>
           </div>
 
           <div class="actions-wrapper">
-            <button class="btn-secondary" type="button">Salvar respostas</button>
-            <button class="btn-primary" type="submit">Fazer matrícula</button>
+            <button class="btn-secondary" type="button">Save answers</button>
+            <button class="btn-primary" type="submit">Enroll</button>
           </div>
 
         </form>
@@ -213,13 +209,12 @@
     <aside>
       <div class="aside-container">
         <header>
-          <img src="assets/icons/logo.svg" alt="Logo estrelas do amanhã">
-          <h2>Porque cada momento de <span>aprendizado</span> conta</h2>
-          <p>Inscreva seu filho em nossa escola e veja-o florescer em um ambiente acolhedor, seguro e
-            estimulante.</p>
+          <img src="assets/icons/logo.svg" alt="Soon stars of tomorrow">
+          <h2>Because every moment of <span>learning</span> counts</h2>
+          <p>Enroll your child in our school and watch them flourish in a welcoming and safe environment..</p>
 
         </header>
-        <img src="assets/images/illustration.svg" alt="Ilustração de uma professora ensinando seus alunos.">
+        <img src="assets/images/illustration.svg" alt="Illustration of a teacher teaching her students.">
       </div>
     </aside>
   </div>
