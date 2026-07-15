@@ -17,73 +17,101 @@
   <div id="app">
     <main>
       <div class="main-container">
+
+        <!-- Botão de voltar (não faz parte do form, é só navegação) -->
         <div class="back">
           <img src="assets/icons/arrow-left-02.svg" alt="back icon">
           <span>Back</span>
         </div>
+
+        <!-- Título principal do formulário -->
         <h1>Enrollment Form</h1>
+
+        <!-- Texto explicativo antes do formulário -->
         <p>Fill in the details below to enroll your child in the Estrelas do Amanhã early childhood education school.
         </p>
+
+        <!-- FORMULÁRIO começa aqui -->
         <form method="post" enctype="multipart/form-data">
+
+          <!-- Agrupamento de informações da criança -->
           <fieldset class="child-info">
-            <legend>
-              Child's Information
-            </legend>
+            <!-- <legend> dá o título dessa seção -->
+            <legend>Child's Information</legend>
+
+            <!-- Campo de texto: nome completo da criança -->
             <div class="input-wrapper">
+              <!-- <label> associa texto ao input -->
               <label for="fullname">Full Name</label>
+              <!-- <input type="text"> campo de texto curto -->
               <input id="fullname" name="fullname" type="text" placeholder="What is the child's name?">
             </div>
+
+            <!-- Campo de data: data de nascimento -->
             <div class="input-wrapper">
               <label for="birth">Date of Birth</label>
+              <!-- <input type="date"> abre calendário -->
               <input id="birth" name="birth" type="date">
             </div>
+
+            <!-- Campo de seleção: gênero -->
             <div class="select-wrapper">
               <label for="gender">Gender</label>
+              <!-- <select> cria lista suspensa -->
               <select name="gender" id="gender">
+                <!-- <option> são as escolhas disponíveis -->
                 <option value="female">Female</option>
                 <option value="male">Male</option>
                 <option value="na">Prefer not to answer</option>
               </select>
             </div>
+
+            <!-- Campo de texto longo: informações médicas -->
             <div class="textarea-wrapper">
               <label for="medical-info">Medical Information</label>
+              <!-- <textarea> permite texto em várias linhas -->
               <textarea name="medical-info" id="medical-info" cols="30" rows="5"
                 placeholder="Does the child have any medical condition the school should know about? (If yes, specify here)"></textarea>
             </div>
+
+            <!-- Upload de arquivo: certidão de nascimento -->
             <div class="droparea-wrapper">
               <label for="birth-file">Birth Certificate</label>
               <div class="dropzone">
+                <!-- <input type="file"> permite enviar arquivo -->
                 <input type="file" id="birth-file" name="birth-file">
-                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M34.9552 18.0221C34.97 18.022 34.985 18.022 35 18.022C39.9706 18.022 44 22.0588 44 27.0386C44 31.6796 40.5 35.5016 36 36M34.9552 18.0221C34.9848 17.6921 35 17.3579 35 17.0202C35 10.9339 30.0752 6 24 6C18.2465 6 13.5247 10.4253 13.0408 16.0638M34.9552 18.0221C34.7506 20.2952 33.8572 22.3692 32.4856 24.033M13.0408 16.0638C7.96796 16.5475 4 20.8278 4 26.0366C4 30.8834 7.43552 34.9264 12 35.8546M13.0408 16.0638C13.3565 16.0337 13.6765 16.0183 14 16.0183C16.2516 16.0183 18.3295 16.7639 20.001 18.022"
-                    stroke="#D6D3D1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M24 26V42M24 26C22.5996 26 19.9831 29.9886 19 31M24 26C25.4004 26 28.017 29.9886 29 31"
-                    stroke="#D6D3D1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-
+                <!-- Ícone ilustrativo -->
+                <svg width="48" height="48">...</svg>
                 <p>Click here to <br> select files</p>
               </div>
             </div>
           </fieldset>
+
+          <!-- Agrupamento de endereço residencial -->
           <fieldset class="address">
             <legend>Residential Address</legend>
+
+            <!-- Campo de texto: CEP -->
             <div class="input-wrapper">
               <label for="cep">ZIP Code</label>
               <input type="text" id="cep" name="cep">
             </div>
 
+            <!-- Rua e número (inputs lado a lado) -->
             <div class="flex">
               <div class="input-wrapper flex-2">
                 <label for="street">Street</label>
+                <!-- "disabled" impede edição -->
                 <input type="text" id="street" name="street" value="Rua das flores" disabled>
               </div>
               <div class="input-wrapper flex-1">
                 <label for="number">Number</label>
+                <!-- type="number" só aceita números -->
                 <input type="number" id="number" name="number">
               </div>
             </div>
 
+            <!-- Cidade e estado (inputs lado a lado) -->
             <div class="flex">
               <div class="input-wrapper flex-2">
                 <label for="city">City</label>
@@ -95,22 +123,31 @@
               </div>
             </div>
           </fieldset>
+
+          <!-- Agrupamento de informações do responsável -->
           <fieldset class="gardian">
             <legend>Guardian's Information</legend>
+
+            <!-- Nome do responsável -->
             <div class="input-wrapper">
               <label for="gardian">Guardian's Name</label>
               <input type="text" id="gardian" name="gardian">
+              <!-- <small> é usado para dicas/observações -->
               <small>Main legal guardian and emergency contact</small>
             </div>
 
+            <!-- Telefone -->
             <div class="input-wrapper">
               <label for="phone">Phone</label>
               <input type="text" id="phone" name="phone" placeholder="(xx) x xxxx-xxxx">
             </div>
 
+            <!-- Email -->
             <div class="input-wrapper">
               <label for="email">Email</label>
+              <!-- type="email" já valida formato de email -->
               <input type="email" id="email" name="email" placeholder="Enter your email">
+              <!-- Mensagem de erro se email inválido -->
               <div class="error-message">
                 <img src="assets/icons/alert-circle.svg" alt="alert icon">
                 <span>Enter a valid email</span>
@@ -118,107 +155,92 @@
             </div>
           </fieldset>
 
+          <!-- Opções de matrícula -->
           <fieldset class="enroll-options">
             <legend>Enrollment Options</legend>
+
+            <!-- Escolha do turno de estudo -->
             <div class="input-wrapper">
               <label>Select the study shift</label>
 
               <div class="radio-wrapper">
+                <!-- Cada <input type="radio"> é uma opção -->
                 <div class="radio-inner">
-                  <div class="radio-image"></div>
                   <input type="radio" name="study-shift" id="morning" value="morning">
-                  <img src="assets/icons/sun-cloud-02.svg" alt="icon of sun with cloud">
                   <label for="morning">Morning</label>
                 </div>
-
                 <div class="radio-inner">
-                  <div class="radio-image"></div>
                   <input type="radio" name="study-shift" id="evening" value="evening">
-                  <img src="assets/icons/sun-02.svg" alt="sun icon">
                   <label for="evening">Evening</label>
                 </div>
               </div>
             </div>
+
+            <!-- Escolha do esporte -->
             <div class="input-wrapper">
               <label>What sport would you like to enroll your child in?</label>
-
               <div class="radio-wrapper">
+                <!-- Cada esporte é uma opção de rádio -->
                 <div class="radio-inner">
-                  <div class="radio-image"></div>
                   <input type="radio" name="sport" id="football">
-                  <img src="assets/icons/football.svg" alt="Football icon">
                   <label for="football">Football</label>
                 </div>
-
                 <div class="radio-inner">
-                  <div class="radio-image"></div>
                   <input type="radio" name="sport" id="basketball">
-                  <img src="assets/icons/basketball-02.svg" alt="Basketball icon">
                   <label for="basketball">Basketball</label>
                 </div>
-
                 <div class="radio-inner">
-                  <div class="radio-image"></div>
                   <input type="radio" name="sport" id="swimming">
-                  <img src="assets/icons/swimming.svg" alt="Swimming icon">
                   <label for="swimming">Swimming</label>
                 </div>
-
                 <div class="radio-inner">
-                  <div class="radio-image"></div>
                   <input type="radio" name="sport" id="yoga">
-                  <img src="assets/icons/yoga-02.svg" alt="Yoga icon">
                   <label for="yoga">Yoga</label>
                 </div>
-
                 <div class="radio-inner">
-                  <div class="radio-image"></div>
                   <input type="radio" name="sport" id="volleyball">
-                  <img src="assets/icons/volleyball.svg" alt="Volleyball icon">
                   <label for="volleyball">Volleyball</label>
                 </div>
-
                 <div class="radio-inner">
-                  <div class="radio-image"></div>
                   <input type="radio" name="sport" id="boxing">
-                  <img src="assets/icons/boxing-glove-01.svg" alt="Boxing icon">
                   <label for="boxing">Boxing</label>
                 </div>
               </div>
             </div>
-
-
           </fieldset>
 
+          <!-- Checkbox de aceitação dos termos -->
           <div class="terms-wrapper input-wrapper checkbox-wrapper">
-            <div class="checkbox-image"></div>
             <input type="checkbox" name="terms" id="terms">
-            <label for="terms">I declare that I have read and agree to the <strong>Terms and Conditions</strong> and the
-              <strong>Privacy Policy</strong> of the Estrela do Amanhã school. </label>
+            <label for="terms">
+              I declare that I have read and agree to the <strong>Terms and Conditions</strong> and the
+              <strong>Privacy Policy</strong> of the Estrela do Amanhã school.
+            </label>
           </div>
 
+          <!-- Botões do formulário -->
           <div class="actions-wrapper">
+            <!-- type="button" não envia o formulário -->
             <button class="btn-secondary" type="button">Save answers</button>
+            <!-- type="submit" envia os dados do formulário -->
             <button class="btn-primary" type="submit">Enroll</button>
           </div>
-
         </form>
-
       </div>
     </main>
+
+    <!-- Barra lateral: informações extras -->
     <aside>
       <div class="aside-container">
         <header>
           <img src="assets/icons/logo.svg" alt="Soon stars of tomorrow">
           <h2>Because every moment of <span>learning</span> counts</h2>
           <p>Enroll your child in our school and watch them flourish in a welcoming and safe environment..</p>
-
         </header>
         <img src="assets/images/illustration.svg" alt="Illustration of a teacher teaching her students.">
       </div>
     </aside>
   </div>
-
 </body>
 
 </html>
